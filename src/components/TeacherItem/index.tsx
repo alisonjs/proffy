@@ -9,21 +9,21 @@ function TeacherItem() {
     <article className="teacher-item">
       <header>
         <img
-          src="https://avatars2.githubusercontent.com/u/21694466?s=460&u=625d8412b8e6f222e51a005dffbd67813fe0ffd1&v=4"
-          alt="Victor Melo"
+          src="https://avatars1.githubusercontent.com/u/8595464?s=460&u=9d6a6a6002946b931a33a569651383ef40a57792&v=4"
+          alt="Alison Sousa"
         />
 
         <div>
-          <strong>Victor Costa</strong>
-          <span>Física</span>
+          <strong>Alison Sousa</strong>
+          <span>Web development</span>
         </div>
       </header>
       <p>
-        Engenheiro de Computação e Analista de Dados
+        Web and mobile Programmer
         <br /> <br />
-        Full Stack Developer em Comando Rodoviário da Brigada Militar
+        AI Programmer at SINFO
         <br /> <br />
-        Apaixonado por tecnologia e eletrônica
+        I’m currently learning Node, React and React Native technologies.
       </p>
 
       <footer>
