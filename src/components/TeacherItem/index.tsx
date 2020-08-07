@@ -3,38 +3,57 @@ import React from "react";
 import './styles.css';
 
 import whastappIcon from "../../assets/images/icons/whatsapp.svg";
+import api from "../../services/api";
+export interface Teacher{
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
 
-function TeacherItem() {
+interface TeacherItemProps{
+  teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+
+  function hadleNewConnection(){
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
         <img
-          src="https://avatars1.githubusercontent.com/u/8595464?s=460&u=9d6a6a6002946b931a33a569651383ef40a57792&v=4"
-          alt="Alison Sousa"
+          src={teacher.avatar}
+          alt={teacher.name}
         />
 
         <div>
-          <strong>Alison Sousa</strong>
-          <span>Web development</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Web and mobile Programmer
-        <br /> <br />
-        AI Programmer at SINFO
-        <br /> <br />
-        I’m currently learning Node, React and React Native technologies.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 75,00</strong>
+          <strong> R$ {teacher.cost}</strong>
         </p>
-        <button type="button">
+        <a 
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={hadleNewConnection} 
+        href={`https://wa.me/${teacher.whatsapp}`}>
           <img src={whastappIcon} alt="whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
