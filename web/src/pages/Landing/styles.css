@@ -90,9 +90,20 @@
   
   .total-connections {
     font-size: 1.4rem;
+    line-height: 2.7rem;
+  }
+
+  .info{
     display: flex;
-    align-items: center;
     justify-content: center;
+  }
+
+  .total-connections::before{
+    content: ' Total de '
+  }
+
+  .total-connections::after{
+    content: ' já realizadas  ' url(../../assets/images/icons/purple-heart.svg);
   }
   
   .welcome-message{
@@ -182,10 +193,15 @@
     .info{
       display: grid;
       grid-template-rows: 1fr;
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas: "message buttons";
+      grid-template-columns: 3fr 1fr;
+      grid-template-areas: "message connections";
     }
     
+    .total-connections{
+      grid-area: connections;
+      padding-right: 20px;
+    }
+
     .buttons-container {
       grid-area: buttons;
     }
