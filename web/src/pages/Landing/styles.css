@@ -9,13 +9,20 @@
     color: var(--color-text-in-primary);
     background: var(--color-primary);
   }
-  
+
   .logo-container img {
     height: 10rem;
   }
   
+  footer{
+    width: 90vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .hero-image{
     width: 100%;
+    max-width: 387px;
   }
   
   .logo-container {
@@ -35,7 +42,7 @@
     justify-content: center;
     margin: 3.2rem 0;
   }
-  
+
   .buttons-container a {
     width: 30rem;
     height: 10.4rem;
@@ -83,32 +90,73 @@
   
   .total-connections {
     font-size: 1.4rem;
-  
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
+  .welcome-message{
+    font-size: 1.6rem;
+    line-height: 3rem;
+    display: none;
+    align-items: center;
+    min-width: 200px;
+    justify-content: center;
+    
+    color: var(--color-text-base);
+  }
+
   .total-connections img {
     margin-left: 0.8rem;
   }
   
+  .image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
   @media (min-width: 1100px) {
     #page-landing-content{
-      max-width: 1100px;
-  
+      width: 100%;
       display: grid;
-      grid-template-rows: 350px 1fr;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 527px 1fr;
+      grid-template-columns: 1fr;
       grid-template-areas: 
-        "logo hero hero"
-        "buttons buttons total"
+        "main"
+        "footer"
         ;
     }
-  
+
+    footer{
+      grid-area: footer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+      background-color: var(--color-background);
+      padding: 0 20px;
+    }
+
+    main{
+      grid-area: main;
+      margin: 118px 160px 59px 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+    }
+
+    .welcome-message{
+      grid-area: message;
+      display: flex;
+    }
+
     .logo-container{
-      grid-area: logo;
-      align-self: center;
+      align-self: initial;
       margin: 0;
     }
   
@@ -122,21 +170,23 @@
     }
   
     .hero-image {
-      grid-area: hero;
-      justify-content: end;
-    }
-  
-    .buttons-container {
-      grid-area: buttons;
-      justify-content: flex-start;
+      width: 100%;
+      max-width: 689px;
+      min-width: 387px;
     }
   
     .buttons-container a {
       font-size: 2.4rem;
     }
-  
-    .total-connections {
-      grid-area: total;
-      justify-content: flex-end;
+    
+    .info{
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "message buttons";
+    }
+    
+    .buttons-container {
+      grid-area: buttons;
     }
   }
